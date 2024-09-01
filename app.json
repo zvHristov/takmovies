@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "TakMovies",
+    "slug": "takmovies",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kingkongruderuders.takmovies"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kingkongruderuders.takmovies"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +33,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "91ad690f-df13-4d71-b926-8477c40746ab"
+      }
+    },
+    "owner": "kingkong_rude_ruders",
+    "updates": {
+      "url": "https://u.expo.dev/91ad690f-df13-4d71-b926-8477c40746ab"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
