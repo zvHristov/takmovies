@@ -6,8 +6,6 @@ import { login } from '@/common/model/auth';
 import {getCurrentUser} from '@/common/http/getCurrentUser';
 import { getCurrUser } from '@/common/model/auth';
 //getCurrUser
-import * as Notifications from 'expo-notifications';
-import Constants from 'expo-constants';
 
 export const setAppUser = async (
   FirebaseUser: User | null,
