@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -6,12 +5,17 @@ import Animated, {
   withRepeat,
   withSequence,
 } from 'react-native-reanimated';
+import { PropsWithChildren, ReactElement } from 'react';
+import { ThemedView } from './ThemedView';
 
-import { ThemedText } from '@/components/ThemedText';
-
-export function HelloWave() {
+type Props = PropsWithChildren<{
+  helloElement?: ReactElement;
+}>;
+export function HelloWave({
+  children,
+  helloElement
+}: Props)  {
   const rotationAnimation = useSharedValue(0);
-
   rotationAnimation.value = withRepeat(
     withSequence(withTiming(25, { duration: 150 }), withTiming(0, { duration: 150 })),
     4 // Run the animation 4 times
@@ -23,15 +27,8 @@ export function HelloWave() {
 
   return (
     <Animated.View style={animatedStyle}>
-      <ThemedText style={styles.text}>👋</ThemedText>
+      <ThemedView style={{}}>{helloElement}</ThemedView>
+      <ThemedView style={{}}>{children}</ThemedView>
     </Animated.View>
   );
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 28,
-    lineHeight: 32,
-    marginTop: -6,
-  },
-});

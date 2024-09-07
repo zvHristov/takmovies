@@ -8,17 +8,20 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { ThemedView } from '@/components/ThemedView';
+import GradientBackground from './GradientBackground';
 
 const HEADER_HEIGHT = 250;
 
 type Props = PropsWithChildren<{
   headerImage: ReactElement;
+  headerElement?: ReactElement;
   headerBackgroundColor: { dark: string; light: string };
 }>;
 
 export default function ParallaxScrollView({
   children,
   headerImage,
+  headerElement,
   headerBackgroundColor,
 }: Props) {
   const colorScheme = useColorScheme() ?? 'light';
@@ -51,8 +54,14 @@ export default function ParallaxScrollView({
             { backgroundColor: headerBackgroundColor[colorScheme] },
             headerAnimatedStyle,
           ]}>
+          <GradientBackground colors={['#F7FB00', '#C9A483', '#311FD8']}>
+            <ThemedView  style={styles.headerElement}>
+            {headerElement}
+          </ThemedView>
           {headerImage}
+            </GradientBackground>
         </Animated.View>
+   
         <ThemedView style={styles.content}>{children}</ThemedView>
       </Animated.ScrollView>
     </ThemedView>
@@ -66,11 +75,22 @@ const styles = StyleSheet.create({
   header: {
     height: 250,
     overflow: 'hidden',
+  
+  },
+  headerElement: {
+    position: 'absolute',
+    zIndex: 1,
+    padding: 32,
+    gap: 2,
+    overflow: 'hidden',
+    backgroundColor: 'transparent',
+    color: '#868889',
   },
   content: {
     flex: 1,
     padding: 32,
     gap: 16,
     overflow: 'hidden',
+    backgroundColor: 'transparent',
   },
 });

@@ -23,10 +23,19 @@
       "distribution": "internal",
       "channel": "main",
       "android": {
-        "image": "latest"
+        "package": "com.movies.netflix",
+        "image": "latest",
+        "googleServicesFile": "./google-services.json",
+        "env":{ 
+          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
+         }
       },
       "ios": {
-        "image": "latest"
+        "image": "latest",
+        "googleServicesFile": "./GoogleService-Info.plist",
+        "env":{ 
+          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
+         }
       }
     },
     "production": {
