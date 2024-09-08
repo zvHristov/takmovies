@@ -27,7 +27,7 @@
         "image": "latest",
         "googleServicesFile": "./google-services.json",
         "env":{ 
-          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
+          "EXPO_PUBLIC_API_URL": "localhost:8000/api/"
          }
       },
       "ios": {
@@ -35,7 +35,7 @@
         "googleServicesFile": "./GoogleService-Info.plist",
         "bundleIdentifier": "com.movies.netflix",
         "env":{ 
-          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
+          "EXPO_PUBLIC_API_URL": "localhost:8000/api/"
          }
       }
     },
