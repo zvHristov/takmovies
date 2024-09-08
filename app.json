@@ -14,14 +14,17 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.kingkongruderuders.takmovies"
+      "bundleIdentifier": "com.kingkongruderuders.takmovies",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.kingkongruderuders.takmovies"
+      
+      "package": "com.kingkongruderuders.takmovies",
+      "googleServicesFile": "./google-services.json" 
     },
     "web": {
       "bundler": "metro",
@@ -30,9 +33,22 @@
     },
     "plugins": [
       "expo-router",
+      // "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
+      "@react-native-firebase/app",
+      "@react-native-google-signin/google-signin",
       [
-        "@react-native-google-signin/google-signin",
-        "@react-native-firebase/app"
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "13.4"
+          }
+        }
       ]
     ],
     "experiments": {

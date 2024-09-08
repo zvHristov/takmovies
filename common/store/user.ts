@@ -1,11 +1,48 @@
 
+import { initializeApp } from 'firebase/app';
 import { User } from '@firebase/auth';
+import messaging from '@react-native-firebase/messaging';
+import { Platform } from 'react-native';
 import { getCurrPopularMovies } from '@/common/model/movies';
 import { MoviesIF } from '@/common/type/user';
 import { login } from '@/common/model/auth';
 import {getCurrentUser} from '@/common/http/getCurrentUser';
 import { getCurrUser } from '@/common/model/auth';
+
 //getCurrUser
+// Function to get the FCM token for this device
+// const getFCMToken = async () => {
+//   const token = await messaging().getToken();
+//   console.log("FCM Token: ", token);
+//   return token;
+// };
+  
+// Call this function after requesting permissions
+// const admin = require('firebase-admin');
+// admin.initializeApp({
+//   credential: admin.credential.applicationDefault()
+// });
+
+// const message = {
+//   notification: {
+//     title: 'New Movie X Released!',
+//     body: 'Click to check out the details of Movie X!',
+//   },
+//   token: 'FCM_DEVICE_TOKEN', // FCM token from the mobile device
+//   data: {
+//     movieId: '12345'
+//   }
+// };
+
+// // Send a message to the device corresponding to the provided FCM token.
+// admin.messaging().send(message)
+//   .then((response: any) => {
+//     console.log('Successfully sent message:', response);
+//   })
+//   .catch((error: any) => {
+//     console.log('Error sending message:', error);
+//   });
+
 
 export const setAppUser = async (
   FirebaseUser: User | null,

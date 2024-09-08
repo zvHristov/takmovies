@@ -21,9 +21,8 @@ const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthentic
 const user = useSelector((state: RootState) => state.auth.user);
 
 const movie = useSelector((state: RootState) => state.movies);
-
-
 const selectedStateSpot = useSelector((state: RootState) => state.movies.selectedSpot);
+
 const {
   MovieBottomSheetComponent,
   spotSheetRef, selectedSpot,
@@ -52,7 +51,7 @@ useEffect(() => {
 const handleSheetChanges = (fromIndex: number, selectedSpot: MoviesIF) => {
   return fromIndex === 0 ? dispatch(setSelectedMovieSpot(selectedSpot)) : null;
 };
-
+console.log(user, 'user');
 return (
   <View style={styles.container}>
     <ParallaxScrollView
@@ -116,6 +115,9 @@ return (
             <ThemedText type="title"
               style={{color: '#000',  backgroundColor: '#fff'}}
               >!Netflix</ThemedText>
+              <ThemedText type="title"
+              style={{color: '#000'}}
+              >{user?.email || user}</ThemedText>
             </HelloWave>
         </ThemedView>
         </GradientBackground>

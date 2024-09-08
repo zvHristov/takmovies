@@ -33,6 +33,7 @@
       "ios": {
         "image": "latest",
         "googleServicesFile": "./GoogleService-Info.plist",
+        "bundleIdentifier": "com.movies.netflix",
         "env":{ 
           "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
          }
