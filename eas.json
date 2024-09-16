@@ -23,29 +23,38 @@
       "distribution": "internal",
       "channel": "main",
       "android": {
-        "package": "com.movies.netflix",
-        "image": "latest",
-        "googleServicesFile": "./google-services.json",
-        "env":{ 
-          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
-         }
+        // "package": "com.movies.netflix",
+        "image": "latest"
+        // "googleServicesFile": "./google-services.json",
+        // "env":{ 
+        //   "EXPO_PUBLIC_API_URL": "localhost:8000/api/"
+        //  }
       },
       "ios": {
-        "image": "latest",
-        "googleServicesFile": "./GoogleService-Info.plist",
-        "bundleIdentifier": "com.movies.netflix",
-        "env":{ 
-          "EXPO_PUBLIC_API_URL": "localhost:8000/api/v1/"
-         }
+        "image": "latest"
+        // "googleServicesFile": "./GoogleService-Info.plist",
+        // "bundleIdentifier": "com.movies.netflix",
+        // "env":{ 
+        //   "EXPO_PUBLIC_API_URL": "localhost:8000/api/"
+        //  }
       }
     },
     "production": {
       "channel": "production",
       "android": {
-        "image": "latest"
+        "image": "latest",
+          "buildType": "apk", // Ensure it's an APK for production
+        // // "googleServicesFile": "./google-services.json",
+        "env":{ 
+          "EXPO_PUBLIC_API_URL": "localhost:8000/api/",
+          // "EXPO_PUBLIC_GOOGLE_CLIENT_URL": "942343035565-o2rshjf6t9a0upl4panhfckhftj8mvfo.apps.googleusercontent.com",
+          // "EXPO_PUBLIC_GOOGLE_SECRET": "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",
+          // "EXPO_PUBLIC_GOOGLE_API_KEY": "AIzaSyCLN2mEAVvfljVcV4FDhex8ba4pvC41iAQ"
+         }
       },
       "ios": {
-        "image": "latest"
+        "image": "latest",
+        "credentialsSource": "remote"
       }
     }
   },
